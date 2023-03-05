@@ -10,6 +10,9 @@ class Account:
         return self._balance
 
     def withdraw(self, amount):
-        if amount > 0 and self._balance - amount >= 0:
-            # can also be written with a conditional expression: if self.balance >= amount > 0:
-            self._balance -= amount
+        # if amount > 0 and self._balance - amount >= 0:
+        # can also be written with a conditional expression: if self.balance >= amount > 0:
+        self._balance -= amount
+
+
+

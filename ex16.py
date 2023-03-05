@@ -4,8 +4,7 @@ class Person:
         self._gender = gender
 
     def __str__(self):
-        return "Name: " + self._name + \
-            " Gender: " + self._gender
+        return f"Name: {self._name}, Gender: {self._gender}"
 
 
 class Employee(Person):  # subclass
@@ -16,9 +15,7 @@ class Employee(Person):  # subclass
         self._role = role
 
     def __str__(self):
-        return "Name: " + self._name + \
-            ", Gender: " + self._gender + \
-            ", Position: " + self._role
+        return "Name: " + self._name + ", Gender: " + self._gender + ", Position: " + self._role
 
     def tasks(self, tasks):
         return f"{self._name} has completed {tasks} tasks from the project."
@@ -32,9 +29,7 @@ class Customer(Person):  # subclass
         self._company = company
 
     def __str__(self):
-        return "Name: " + self._name + \
-            ", Gender: " + self._gender + \
-            ", Company: " + self._company
+        return "Name: " + self._name + ", Gender: " + self._gender + ", Company: " + self._company
 
     def deadline(self, date):
         return f"The {self._company} project deadline is {date}."

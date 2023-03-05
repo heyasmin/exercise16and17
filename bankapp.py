@@ -1,10 +1,32 @@
 from account import Account
 
-mirfat_account = Account(1000)
-pam_account = Account(500)
-eyasmin_account = Account(300)
-print(f"Mirfat's starting balance is £{mirfat_account.get_balance()}.")
 
-pam_account.deposit(150)
+class Current(Account):
+    def __init__(self, amount):
+        super().__init__(self)
+        self._balance = amount
+
+
+class Savings(Account):
+    def __init__(self, amount):
+        super().__init__(self)
+        self._balance = amount
+
+
+mirfat_current = Current(1000)
+mirfat_savings = Savings(200)
+
+pam_current = Current(500)
+pam_savings = Savings(100)
+
+eyasmin_current = Current(300)
+eyasmin_savings = Savings(400)
+
+print(f"Mirfat's current account's starting balance is £{mirfat_current.get_balance()}.")
+
+pam_savings.deposit(150)
 # how to add the deposit amount in the print statement?
-print(f"Pam has completed a deposit, the balance is now £{pam_account.get_balance()}.")
+print(f"Pam's savings balance is now £{pam_savings.get_balance()}.")
+
+eyasmin_current.withdraw(-100)
+print(f"Eyasmin's current account's balance is £{eyasmin_current.get_balance()}.")
