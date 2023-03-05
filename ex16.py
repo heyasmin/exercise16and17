@@ -1,7 +1,7 @@
 class Person:
     def __init__(self, name, gender):
         self._name = name
-        self._gender = gender.upper()
+        self._gender = gender
 
     def __str__(self):
         return "Name: " + self._name + \
@@ -10,9 +10,9 @@ class Person:
 
 class Employee(Person):  # subclass
     def __init__(self, name, gender, role):
-        # super().__init__(name, gender)
-        self._name = name
-        self._gender = gender
+        super().__init__(name, gender)
+        # self._name = name
+        # self._gender = gender
         self._role = role
 
     def __str__(self):
@@ -26,8 +26,9 @@ class Employee(Person):  # subclass
 
 class Customer(Person):  # subclass
     def __init__(self, name, gender, company):
-        self._name = name
-        self._gender = gender
+        super().__init__(name, gender)
+        # self._name = name
+        # self._gender = gender
         self._company = company
 
     def __str__(self):
@@ -51,5 +52,5 @@ apple = Customer('Steve', 'M', 'Apple')
 barclays = Customer('Laura', 'M', 'Barclays')
 print(netflix, apple, barclays, sep="\n")
 
+print(netflix.deadline('20th of March 2023'))
 print(junior.tasks(5))
-print(netflix.deadline('20th of March 2023.'))
