@@ -4,13 +4,13 @@ from account import Account
 class Current(Account):
     def __init__(self, amount):
         super().__init__(self)
-        self._balance = amount
+        self.balance = amount
 
 
 class Savings(Account):
     def __init__(self, amount):
         super().__init__(self)
-        self._balance = amount
+        self.balance = amount
 
 
 mirfat_current = Current(1000)
@@ -25,6 +25,10 @@ eyasmin_current = Current(300)
 eyasmin_savings = Savings(400)
 print(f"Eyasmin's current: £{eyasmin_current.get_balance()}, Eyasmin's savings: £{eyasmin_savings.get_balance()}")
 
+print(30 * "-")
+
 pam_savings.deposit(150)
 
-eyasmin_current.withdraw(-500)
+eyasmin_current.withdraw(500)
+
+
