@@ -1,16 +1,6 @@
-from account import Account
-
-
-class Current(Account):
-    def __init__(self, amount):
-        super().__init__(self)
-        self.balance = amount
-
-
-class Savings(Account):
-    def __init__(self, amount):
-        super().__init__(self)
-        self.balance = amount
+from current import Current
+from savings import Savings
+from insufficient_funds import InsufficientFunds
 
 
 mirfat_current = Current(1000)
@@ -29,6 +19,12 @@ print(30 * "-")
 
 pam_savings.deposit(150)
 
-eyasmin_current.withdraw(500)
-
-
+# the try/except/finally code block you input it into the main bank app, not with the classes
+# for example, this will only action the 275:
+try:
+    eyasmin_current.withdraw(25)
+    eyasmin_current.withdraw(500)
+except InsufficientFunds as error:
+    print(error)
+finally:
+    print(eyasmin_current.get_balance())

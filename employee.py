@@ -11,5 +11,7 @@ class Employee(Person):  # subclass
     def __str__(self):
         return "Name: " + self.name + ", Gender: " + self.gender + ", Position: " + self.role
 
-    def tasks(self, tasks):
+    def get_tasks(self, tasks):
         return f"{self.name} has completed {tasks} tasks from the project."
+
+    # add setter/getter as employees can work on all projects, in the constructor
